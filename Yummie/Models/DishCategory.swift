@@ -6,12 +6,10 @@
 //
 
 import Foundation
-import UIKit
 
 struct DishCategory {
     let id: String?
     let name: String?
-#warning("make the image string after testing")
-    let image: UIImage?
+    let image: String?
     let description: String? = ""
 }

@@ -17,14 +17,12 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
     }
     
     func configureCell(_ category: DishCategory) {
         categoryTitleLabel.text = category.name
-        categoryImageView.image = category.image
-        #warning("make the image string after testing")
-//        categoryImageView.kf.setImage(with: category.image.asUrl)
+        categoryImageView.kf.setImage(with: category.image?.asUrl)
     }
-
+    
 }

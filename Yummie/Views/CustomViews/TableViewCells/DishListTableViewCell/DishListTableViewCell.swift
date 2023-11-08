@@ -17,14 +17,12 @@ class DishListTableViewCell: UITableViewCell {
     
     func configureCell(_ dish: Dish) {
         dishNameLabel.text = dish.name
-        #warning("make the image string after testing")
-        dishImageView.image = dish.image
+        dishImageView.kf.setImage(with: dish.image?.asUrl)
         descriptionLabel.text = dish.descreption
     }
     
     func configureCell(_ order: Order) {
-        #warning("make the image string after testing")
-        dishImageView.image = order.dish?.image
+        dishImageView.kf.setImage(with: order.dish?.image?.asUrl)
         dishNameLabel.text = order.dish?.name
         descriptionLabel.text = order.name
     }

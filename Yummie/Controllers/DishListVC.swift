@@ -11,9 +11,9 @@ class DishListVC: UIViewController {
     static let identifier = String(describing: DishListVC.self)
     
     var category: DishCategory?
-    var dishes: [Dish] = [Dish(id: "11", name: "Koshari", image: UIImage(named: "test1"), calories: 600,                                         descreption: "Most popular delicious dish allover the Egypt "),
-                          Dish(id: "22", name: "Mahshi", image: UIImage(named: "test2"), calories: 1000, descreption: "A very respected dish in most occasions"),
-                          Dish(id: "33", name: "Bassta", image: UIImage(named: "test3"), calories: 1500, descreption: "Very quick and delisious meal")]
+    var dishes: [Dish] = [Dish(id: "11", name: "Koshari", image:"https://picsum.photos/100/200", calories: 600,                                         descreption: "Most popular delicious dish allover the Egypt "),
+                          Dish(id: "22", name: "Mahshi", image:"https://picsum.photos/100/200", calories: 1000, descreption: "A very respected dish in most occasions"),
+                          Dish(id: "33", name: "Bassta", image:"https://picsum.photos/100/200", calories: 1500, descreption: "Very quick and delisious meal")]
   
     @IBOutlet weak var tableView: UITableView!
     

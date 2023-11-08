@@ -13,12 +13,9 @@ enum Path {
     case temp
     
     var endPoint: String {
-        
         switch self {
-            
         case .temp:
-            return "/temp"
-            
+            return "/dishes/cat1"
         }
     }
 }

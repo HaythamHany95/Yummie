@@ -6,13 +6,11 @@
 //
 
 import Foundation
-import UIKit
 
-struct Dish {
+struct Dish: Codable {
     let id: String?
     let name: String?
-#warning("make the image string after testing")
-    let image: UIImage?
+    let image: String?
     let calories: Int?
     let descreption: String?
 }

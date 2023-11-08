@@ -9,7 +9,7 @@ import UIKit
 
 class ListOrdersVC: UIViewController {
 
-    var orders: [Order] = [Order(id: "113", name: "Haytham Hany", dish: Dish(id: "11", name: "Koshari", image: UIImage(named: "test1"), calories: 600,                                         descreption: "Most popular delicious dish allover the Egypt "))]
+    var orders: [Order] = [Order(id: "113", name: "Haytham Hany", dish: Dish(id: "11", name: "Koshari", image:"https://picsum.photos/100/200", calories: 600,                                         descreption: "Most popular delicious dish allover the Egypt "))]
     
     @IBOutlet weak var tableView: UITableView!
     

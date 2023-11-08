@@ -24,8 +24,7 @@ class SpecialCollectionViewCell: UICollectionViewCell {
     
     func configureCell(_ dish: Dish) {
         dishNameLabel.text = dish.name
-        #warning("make the image string after testing")
-        dishImageView.image = dish.image
+        dishImageView.kf.setImage(with: dish.image?.asUrl)
         caloriesLabel.text = "Calories \(dish.calories ?? 0 )"
         descreptionLabel.text = dish.descreption
     }

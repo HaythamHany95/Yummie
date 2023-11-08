@@ -31,8 +31,7 @@ class DishDetailsVC: UIViewController {
     
 
     private func configureDish() {
-        #warning("make the image string after testing")
-        dishImageView.image = dish?.image
+        dishImageView.kf.setImage(with: dish?.image?.asUrl)
         dishNameLabel.text = dish?.name
         caloriesLabel.text = "Calories \(dish?.calories ?? 0 )"
         descriptionLabel.text = dish?.descreption

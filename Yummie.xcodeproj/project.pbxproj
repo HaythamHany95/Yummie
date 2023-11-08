@@ -28,7 +28,9 @@
 		9D951DCE2AF23F1300F6F2F5 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D951DCD2AF23F1300F6F2F5 /* OnboardingSlide.swift */; };
 		9D951DD02AF243C600F6F2F5 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D951DCF2AF243C600F6F2F5 /* OnboardingCollectionViewCell.swift */; };
 		9DA2F30D2AF945C20064F950 /* ListOrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2F30C2AF945C20064F950 /* ListOrdersVC.swift */; };
+		9DB00E1E2AFBEBD4005B24F0 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB00E1D2AFBEBD4005B24F0 /* ApiResponse.swift */; };
 		9DB17BDA2AF948E1005B7B98 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB17BD92AF948E0005B7B98 /* Order.swift */; };
+		9DDB94712AFB6E5E007F0BA6 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDB94702AFB6E5E007F0BA6 /* AppError.swift */; };
 		9DE2A34E2AF8E6E600D53B88 /* DishListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE2A34C2AF8E6E600D53B88 /* DishListTableViewCell.swift */; };
 		9DE2A34F2AF8E6E600D53B88 /* DishListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE2A34D2AF8E6E600D53B88 /* DishListTableViewCell.xib */; };
 		9DE2A3522AF8F3F000D53B88 /* DishListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE2A3512AF8F3F000D53B88 /* DishListVC.swift */; };
@@ -64,7 +66,9 @@
 		9D951DCD2AF23F1300F6F2F5 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		9D951DCF2AF243C600F6F2F5 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DA2F30C2AF945C20064F950 /* ListOrdersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOrdersVC.swift; sourceTree = "<group>"; };
+		9DB00E1D2AFBEBD4005B24F0 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		9DB17BD92AF948E0005B7B98 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		9DDB94702AFB6E5E007F0BA6 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		9DE2A34C2AF8E6E600D53B88 /* DishListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishListTableViewCell.swift; sourceTree = "<group>"; };
 		9DE2A34D2AF8E6E600D53B88 /* DishListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DishListTableViewCell.xib; sourceTree = "<group>"; };
 		9DE2A3512AF8F3F000D53B88 /* DishListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishListVC.swift; sourceTree = "<group>"; };
@@ -128,8 +132,10 @@
 			isa = PBXGroup;
 			children = (
 				9D7CBAA42AFAAE310085D72A /* NetworkManager.swift */,
+				9DB00E1D2AFBEBD4005B24F0 /* ApiResponse.swift */,
 				9D7CBAA62AFAAEE00085D72A /* Path.swift */,
 				9D7CBAA82AFAB07C0085D72A /* Method.swift */,
+				9DDB94702AFB6E5E007F0BA6 /* AppError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -404,6 +410,7 @@
 				9D7CBAA92AFAB07C0085D72A /* Method.swift in Sources */,
 				9D918E332AF180E9003F1E48 /* OnboardingVC.swift in Sources */,
 				9D951DCE2AF23F1300F6F2F5 /* OnboardingSlide.swift in Sources */,
+				9DDB94712AFB6E5E007F0BA6 /* AppError.swift in Sources */,
 				9D7CBAA72AFAAEE00085D72A /* Path.swift in Sources */,
 				9D7CBAA52AFAAE310085D72A /* NetworkManager.swift in Sources */,
 				9DEFD6342AF37204003606F5 /* CardView.swift in Sources */,
@@ -411,6 +418,7 @@
 				9DA2F30D2AF945C20064F950 /* ListOrdersVC.swift in Sources */,
 				9D918E1C2AF17C31003F1E48 /* SceneDelegate.swift in Sources */,
 				9DE2A34E2AF8E6E600D53B88 /* DishListTableViewCell.swift in Sources */,
+				9DB00E1E2AFBEBD4005B24F0 /* ApiResponse.swift in Sources */,
 				9D56D1A52AF35DB300FF5D14 /* DishCategory.swift in Sources */,
 				9D951DD02AF243C600F6F2F5 /* OnboardingCollectionViewCell.swift in Sources */,
 			);
