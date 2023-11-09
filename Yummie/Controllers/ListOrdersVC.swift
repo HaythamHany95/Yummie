@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class ListOrdersVC: UIViewController {
-
-    var orders: [Order] = [Order(id: "113", name: "Haytham Hany", dish: Dish(id: "11", name: "Koshari", image:"https://picsum.photos/100/200", calories: 600,                                         descreption: "Most popular delicious dish allover the Egypt "))]
+    
+    var orders: [Order] = []
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,8 +19,30 @@ class ListOrdersVC: UIViewController {
         title = "Orders"
         tableView.delegate = self
         tableView.dataSource = self
-        
         registerCell()
+        ProgressHUD.show()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchOrders()
+    }
+    
+    private func fetchOrders() {
+        NetworkManager.shared.fetchOrders { [weak self] result in
+            switch result {
+                
+            case .success(let orders):
+                ProgressHUD.dismiss()
+                
+                self?.orders = orders
+                self?.tableView.reloadData()
+                
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
     }
     
     private func registerCell() {
@@ -45,4 +68,6 @@ extension ListOrdersVC: UITableViewDelegate, UITableViewDataSource {
         vc.dish = orders[indexPath.row].dish
         navigationController?.pushViewController(vc, animated: true)
     }
+    
 }
+

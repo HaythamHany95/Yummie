@@ -48,11 +48,10 @@ class OnboardingVC: UIViewController {
             
             guard let vc = storyboard?.instantiateViewController(withIdentifier: "HomeVC") else { return }
             
-            vc.modalPresentationStyle = .fullScreen
             vc.modalTransitionStyle = .crossDissolve
             
-            present(vc, animated: true)
-            
+            navigationController?.pushViewController(vc, animated: true)
+            navigationController?.navigationItem.backButtonTitle = nil
             
         } else {
             pageCounter += 1

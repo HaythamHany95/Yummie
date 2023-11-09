@@ -7,5 +7,7 @@ target 'Yummie' do
 
   # Pods for Yummie
 pod 'Kingfisher'
+pod 'ProgressHUD'
+pod 'IQKeyboardManager'
 
 end

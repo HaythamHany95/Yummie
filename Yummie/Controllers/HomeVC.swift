@@ -6,20 +6,13 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class HomeVC: UIViewController {
     
-    var categories: [DishCategory] = [DishCategory(id: "1", name: "Egyptian Dishes", image:"https://picsum.photos/100/200"),
-                                      DishCategory(id: "1", name: "African Dishes", image:"https://picsum.photos/100/200"),
-                                      DishCategory(id: "1", name: "Asian Dishes", image:"https://picsum.photos/100/200"),
-                                      DishCategory(id: "1", name: "Latino Dishes", image:"https://picsum.photos/100/200"),
-                                      DishCategory(id: "1", name: "Moroccian Dishes", image:"https://picsum.photos/100/200")]
-    var popularDishes: [Dish] = [Dish(id: "11", name: "Koshari", image:"https://picsum.photos/100/200", calories: 600,                                         descreption: "Most popular delicious dish allover the Egypt "),
-                                 Dish(id: "22", name: "Mahshi", image:"https://picsum.photos/100/200", calories: 1000, descreption: "A very respected dish in most occasions"),
-                                 Dish(id: "33", name: "Bassta", image:"https://picsum.photos/100/200", calories: 1500, descreption: "Very quick and delisious meal")]
-    var speacials: [Dish] = [Dish(id: "11", name: "Koshari", image:"https://picsum.photos/100/200", calories: 600,                                         descreption: "Most popular delicious dish allover the Egypt "),
-                             Dish(id: "22", name: "Mahshi",image:"https://picsum.photos/100/200", calories: 1000, descreption: "A very respected dish in most occasions"),
-                             Dish(id: "33", name: "Bassta", image:"https://picsum.photos/100/200", calories: 1500, descreption: "talian pasta is a collective name for food made from wheat flour and water. The name refers to the resulting dough (pasta also literally means 'dough') of which different shapes are rolled and cut. Pasta is boiled in water and served with a sauce.")]
+    var categories: [DishCategory] = []
+    var popularDishes: [Dish] = []
+    var speacials: [Dish] = []
     
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var popularCollectionView: UICollectionView!
@@ -27,25 +20,39 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.tintColor = .label
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
         applyCollectionDelegates()
         registerCell()
+        ProgressHUD.show()
         
-        NetworkManager.shared.sendFirstRequest { result in
-            switch result {
-            case .success(let data):
-                for dish in data {
-                    print(dish.name ?? "")
-                }
+        fetchAllCategories()
+    }
+    
+    private func fetchAllCategories() {
+        NetworkManager.shared.fetchAllCategories { [weak self] results in
+            switch results {
                 
-            
+            case .success(let allDishes):
+                ProgressHUD.dismiss()
+                ///*To delete the "Nigerian Dishes" category from the collectionView
+               //self?.categories = allDishes.categories!.filter { $0.name != "Nigerian Dishes" }
+                self?.categories = allDishes.categories ?? []
+                self?.popularDishes = allDishes.populars ?? []
+                self?.speacials = allDishes.specials ?? []
+                
+                self?.categoryCollectionView.reloadData()
+                self?.popularCollectionView.reloadData()
+                self?.specialCollectionView.reloadData()
+
+                
             case .failure(let error):
-                print("the error is \(error.localizedDescription)")
+                ProgressHUD.showError(error.localizedDescription)
+                
             }
         }
-      
-        navigationController?.navigationBar.tintColor = .label
     }
-
     
     private func registerCell() {
         categoryCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)

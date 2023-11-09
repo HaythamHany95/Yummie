@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9D2DAE6D2AF2BE1F00F112D5 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2DAE6C2AF2BE1F00F112D5 /* HomeVC.swift */; };
+		9D3751082AFCBF0D003440D6 /* AllDishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3751072AFCBF0D003440D6 /* AllDishes.swift */; };
 		9D44D5EE2AF89CBD005DA8F2 /* DishDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D44D5ED2AF89CBD005DA8F2 /* DishDetailsVC.swift */; };
 		9D56D1A22AF35B4800FF5D14 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56D1A02AF35B4800FF5D14 /* CategoryCollectionViewCell.swift */; };
 		9D56D1A32AF35B4800FF5D14 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D56D1A12AF35B4800FF5D14 /* CategoryCollectionViewCell.xib */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		7FE9CBCF67F6DDAB0601521A /* Pods_Yummie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yummie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D2DAE6C2AF2BE1F00F112D5 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		9D3751072AFCBF0D003440D6 /* AllDishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDishes.swift; sourceTree = "<group>"; };
 		9D44D5ED2AF89CBD005DA8F2 /* DishDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailsVC.swift; sourceTree = "<group>"; };
 		9D56D1A02AF35B4800FF5D14 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		9D56D1A12AF35B4800FF5D14 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				9D56D1A42AF35DB300FF5D14 /* DishCategory.swift */,
 				9DF679402AF395B80098CD67 /* Dish.swift */,
 				9DB17BD92AF948E0005B7B98 /* Order.swift */,
+				9D3751072AFCBF0D003440D6 /* AllDishes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				9DDB94712AFB6E5E007F0BA6 /* AppError.swift in Sources */,
 				9D7CBAA72AFAAEE00085D72A /* Path.swift in Sources */,
 				9D7CBAA52AFAAE310085D72A /* NetworkManager.swift in Sources */,
+				9D3751082AFCBF0D003440D6 /* AllDishes.swift in Sources */,
 				9DEFD6342AF37204003606F5 /* CardView.swift in Sources */,
 				9D951DCC2AF23BEE00F6F2F5 /* UIViews.swift in Sources */,
 				9DA2F30D2AF945C20064F950 /* ListOrdersVC.swift in Sources */,

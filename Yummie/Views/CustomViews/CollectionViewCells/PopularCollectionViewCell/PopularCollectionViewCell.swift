@@ -22,7 +22,7 @@ class PopularCollectionViewCell: UICollectionViewCell {
     func configureCell(_ dish: Dish) {
         dishNameLabel.text = dish.name
         dishImageView.kf.setImage(with: dish.image?.asUrl)
-        caloriesLabel.text = "Calories \(dish.calories ?? 0 )" 
+        caloriesLabel.text = "\(dish.calories ?? 0 ) calories" 
         descreptionLabel.text = dish.descreption
     }
 

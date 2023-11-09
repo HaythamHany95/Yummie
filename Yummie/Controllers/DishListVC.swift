@@ -6,14 +6,13 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class DishListVC: UIViewController {
     static let identifier = String(describing: DishListVC.self)
     
     var category: DishCategory?
-    var dishes: [Dish] = [Dish(id: "11", name: "Koshari", image:"https://picsum.photos/100/200", calories: 600,                                         descreption: "Most popular delicious dish allover the Egypt "),
-                          Dish(id: "22", name: "Mahshi", image:"https://picsum.photos/100/200", calories: 1000, descreption: "A very respected dish in most occasions"),
-                          Dish(id: "33", name: "Bassta", image:"https://picsum.photos/100/200", calories: 1500, descreption: "Very quick and delisious meal")]
+    var dishes: [Dish] = []
   
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,8 +21,27 @@ class DishListVC: UIViewController {
         title = category?.name
         tableView.delegate = self
         tableView.dataSource = self
-
         registerCell()
+        ProgressHUD.show()
+        
+        fetchCategoryDishes()
+    }
+    
+    private func fetchCategoryDishes() {
+        guard let categoryId = category?.id else { return }
+        NetworkManager.shared.fetchCategoryDishes(categoryId: categoryId) { [weak self] result in
+            switch result {
+           
+            case .success(let dishes):
+                ProgressHUD.dismiss()
+                
+                self?.dishes = dishes
+                self?.tableView.reloadData()
+            
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
     }
     
     private func registerCell() {

@@ -23,6 +23,8 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     func configureCell(_ category: DishCategory) {
         categoryTitleLabel.text = category.name
         categoryImageView.kf.setImage(with: category.image?.asUrl)
+        
+//        print("DEBUGGGGG \(category.name)-----------------  ")
     }
     
 }

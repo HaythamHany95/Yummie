@@ -11,8 +11,21 @@ struct NetworkManager {
     static let shared = NetworkManager()
     private init() {}
     
-    func sendFirstRequest(completion: @escaping (Result<[Dish], Error>) -> Void) {
-        request(path: .temp, method: .get, completion: completion)
+    func fetchAllCategories(completion: @escaping(Result<AllDishes, Error>) -> Void) {
+        request(path: .FetchAllCategories, method: .get, completion: completion)
+    }
+    
+    func fetchCategoryDishes(categoryId: String, completion: @escaping(Result<[Dish], Error>) -> Void) {
+        request(path: .FetchCategoryDishes(categoryId), method: .get, completion: completion)
+    }
+    
+    func placeOrder(dishId: String, name: String, completion: @escaping(Result<Order, Error>) -> Void) {
+        let params = ["name": name]
+        request(path: .PlaceOrder(dishId), method: .post, parameters: params, completion: completion)
+    }
+    
+    func fetchOrders(completion: @escaping(Result<[Order], Error>) -> Void) {
+        request(path: .FetchOrders, method: .get, completion: completion)
     }
     
     /// This function helps us to create urlRequest
